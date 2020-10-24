@@ -10,10 +10,41 @@
     <script src="src/index.js" charset="utf-8"></script>
     <script type="text/javascript" src="src/index.js"></script>
 </head>
-<div id="comicbooks-container">
 
-</div>
+<body>
+    <h1>COMICBOOK GEEK APP</h1>
+    <h2>MY COMICBOOKS</h2>
 
-<body></body>
+    <div class="form-container">
+
+        <form id="create-comicbook-form" style="">
+            <h2> Create a Comicbook </h2>
+
+            <input id='input-title' type="text" name="title" value="" placeholder="Comicbook Title" class="input-text">
+            <br><br>
+            <input id='input-writer' type="text" name="writer" value="" placeholder="Comicbook Writer" class="input-text">
+            <br><br>
+            <input id='input-artist' type="text" name="artist" value="" placeholder="Comicbook Artist" class="input-text">
+            <br><br>
+            <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Comicbook Description"></textarea>
+            <br><br>
+            <input id='input-url' type="text" name="image" value="" placeholder="Comicbook Image URL" class="input-text">
+            <p>Publishers</p>
+            <select id="publishers" name="publishers">
+            <option value="1">Marvel Comics</option>
+            <option value="2">DC Comics</option>
+            <option value="3">Image Comics</option>
+        </select>
+            <br><br>
+            <input id='create-button' type="submit" name="submit" value="Create New Comicbook" class="submit">
+
+        </form>
+    </div>
+
+    <div id="comicbooks-container">
+
+    </div>
+
+</body>
 
 </html>
