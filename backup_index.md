@@ -106,96 +106,55 @@ function postComicbook(title, writer, artist, description, image_url, publisher_
     let bodyData = { title, writer, artist, description, image_url, publisher_id }
     fetch(endPoint, {
 
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(bodyData)
-    })
+<!DOCTYPE html>
+<html lang="en">
 
-    .then(response => response.json())
-        .then(comicbook => {
-            console.log(comicbook);
-            //const comicbookData = comicbook.data
-            //const comicbooksMarkup = `
-            //<div data-id=${comicbook.id}>
-            // <h3>${comicbookData.attributes.title}</h3>
-            // <img src=${comicbookData.attributes.image_url} height="300" width="200">
-            //<p>${comicbookData.attributes.publisher.name}</p>
-            //<button data-id=${comicbookData.id}>edit</button>
-            //</div>
-            // <br><br>`;
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- JS Connection Tags -->
 
-            // document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
-        })
-}
----------------
+    <script src="src/index.js" charset="utf-8"></script>
+    <script type="text/javascript" src="src/comicbook.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
 
-BACK UP 3 
+</head>
 
-const endPoint = "http://localhost:3000/comicbooks"
+<body>
+    <h1>COMICBOOK GEEK APP</h1>
 
-document.addEventListener("DOMContentLoaded", () => {
-    getComics()
+    <div class="form-container">
 
-    const createComicbookForm = document.querySelector('#create-comicbook-form')
-    createComicbookForm.addEventListener('submit', (e) => createFormHandler(e))
-});
+        <form id="create-comicbook-form" style="">
+            <h2> Create a Comicbook </h2>
 
-function getComics() {
-    fetch(endPoint)
-        .then(response => response.json())
-        .then(comics => {
-            comics.data.forEach(comicbook => {
-                const comicbooksMarkup = `
-          <div data-id=${comicbook.id}>
-            <img src=${comicbook.attributes.image_url} height="300" width="200">
-            <h3>${comicbook.attributes.title}</h3>
-            <p>${comicbook.attributes.publisher.name}</p>
-            <button data-id=${comicbook.id}>edit</button>
-          </div>
-          <br><br>`;
+            <input id='input-title' type="text" name="title" value="" placeholder="Comicbook Title" class="input-text">
+            <br><br>
+            <input id='input-writer' type="text" name="writer" value="" placeholder="Comicbook Writer" class="input-text">
+            <br><br>
+            <input id='input-artist' type="text" name="artist" value="" placeholder="Comicbook Artist" class="input-text">
+            <br><br>
+            <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Comicbook Description"></textarea>
+            <br><br>
+            <input id='input-url' type="text" name="image" value="" placeholder="Comicbook Image URL" class="input-text">
+            <p>Publishers</p>
+            <select id="publishers" name="publishers">
+            <option value="1">Marvel Comics</option>
+            <option value="2">DC Comics</option>
+            <option value="3">Image Comics</option>
+        </select>
+            <br><br>
+            <input id='create-button' type="submit" name="submit" value="Create New Comicbook" class="submit">
 
-                document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
-            })
-        })
-}
-/////////////////////////////////////
-function createFormHandler(e) {
-    e.preventDefault()
-    console.log(e)
+        </form>
+    </div>
+    <br><br>
+    <h2>MY COMICBOOKS</h2>
+    <div id="comicbooks-container">
 
-    const titleInput = document.querySelector('#input-title').value
-    const writerInput = document.querySelector('#input-writer').value
-    const artistInput = document.querySelector('#input-artist').value
-    const descriptionInput = document.querySelector('#input-description').value
-    const imageInput = document.querySelector('#input-url').value
-    const publisherInput = document.querySelector('#publishers').value
-    const publisherId = parseInt(publisherInput)
-        //const publisherId = parseInt(document.querySelector('#publishers').value)// I can do it in single step
-    postComicbook(titleInput, writerInput, artistInput, descriptionInput, imageInput, publisherInput)
-}
+    </div>
 
-function postComicbook(title, writer, artist, description, image_url, publisher_id) {
-    let bodyData = { title, writer, artist, description, image_url, publisher_id }
-    fetch(endPoint, {
+</body>
 
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(bodyData)
-    })
-
-    .then(response => response.json())
-        .then(comicbook => {
-            console.log(comicbook);
-            //const comicbookData = comicbook.data
-            //const comicbooksMarkup = `
-            //<div data-id=${comicbook.id}>
-            // <h3>${comicbookData.attributes.title}</h3>
-            // <img src=${comicbookData.attributes.image_url} height="300" width="200">
-            //<p>${comicbookData.attributes.publisher.name}</p>
-            //<button data-id=${comicbookData.id}>edit</button>
-            //</div>
-            // <br><br>`;
-
-            // document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
-        })
-}
+</html>
