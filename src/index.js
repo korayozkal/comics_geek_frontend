@@ -5,7 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const createComicbookForm = document.querySelector('#create-comicbook-form')
     createComicbookForm.addEventListener('submit', (e) => createFormHandler(e))
+    const comicbooksContainer = document.querySelector('#comicbooks-container')
+    comicbooksContainer.addEventListener('click', e => deleteComicbook(e));
+
+    //const comicbooksContainer = document.querySelector('#comicbooks-container') //working
+    //comicbooksContainer.addEventListener('click', e => { //working
+    //console.log('clicked');
+    //  const id = parseInt(e.target.dataset.id); //
+    //debugger
+    //const comicbook = Comicbook.findById(id); //
+    //debugger
+    //console.log(comicbook); //
 });
+//working })
 
 function getComics() {
     fetch(endPoint)
@@ -66,9 +78,22 @@ function postComicbook(title, writer, artist, image_url, publisher_id) {
             <p> Writer: ${comicbook.writer}</p>
             <p> Artist: ${comicbook.artist}</p>
             <p> Publisher: ${comicbook.publisher_id}</p>
-            <button data-id=${comicbook.id}>edit</button>
+            <button data-id=${comicbook.id}>delete</button>
             </div>
              <br><br>`;
             document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
         })
+
+}
+
+function deleteComicbook(e) {
+    e.preventDefault()
+        //debugger
+    let comicbookId = e.target.parentElement.dataset.id
+    fetch(`${endPoint}/${comicbookId}`, { //we are making it dynamics
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        })
+        .then(e.target.parentElement.remove())
+
 }

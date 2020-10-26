@@ -15,7 +15,7 @@ class Comicbook {
     }
 
     renderComicbook() {
-        debugger //check what this is 
+        //debugger //check what this is 
         return `
             <div data-id=${this.id}>
             <img src=${this.image_url} height="300" width="200">
@@ -23,10 +23,16 @@ class Comicbook {
             <p> Writer: ${this.writer}</p>
             <p> Artist: ${this.artist}</p>
             <p> Publisher: ${this.publisher}</p>
-            <button data-id=${this.id}>edit</button>
+            <button data-id=${this.id}>delete</button>
           </div>
           <br><br>`;
+
     }
 }
+//static findById(id) { //removed id for testing 
+//  return this.all.find(comicbook => comicbook.id === id);
+//debugger
+//}
 
+//
 Comicbook.all = [];
