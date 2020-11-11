@@ -36,6 +36,7 @@ function createFormHandler(e) {
     postComicbook(titleInput, writerInput, artistInput, imageInput, publisherInput)
 }
 
+// I am displaying the comicbooks that I submitted in the form.
 function postComicbook(title, writer, artist, image_url, publisher_id) {
     let bodyData = { title, writer, artist, image_url, publisher_id }
     fetch(endPoint, {
