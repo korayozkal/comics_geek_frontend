@@ -72,3 +72,21 @@ function postComicbook(title, writer, artist, image_url, publisher_id) {
             document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
         })
 }
+
+
+
+//Code removed with OO
+//function render(comicbook) {
+//const comicbooksMarkup = `
+//<div data-id=${comicbook.id}>
+//<img src=${comicbook.attributes.image_url} height="300" width="200">
+//<h3>${comicbook.attributes.title}</h3>
+//<p> Writer: ${comicbook.attributes.writer}</p>
+//<p> Artist: ${comicbook.attributes.artist}</p>
+// <p> Publisher: ${comicbook.attributes.publisher.name}</p>
+//<button data-id=${comicbook.id}>edit</button>
+//</div>
+//<br><br>`;
+
+//document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
+//}

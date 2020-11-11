@@ -29,10 +29,4 @@ class Comicbook {
 
     }
 }
-//static findById(id) { //removed id for testing 
-//  return this.all.find(comicbook => comicbook.id === id);
-//debugger
-//}
-
-//
 Comicbook.all = [];

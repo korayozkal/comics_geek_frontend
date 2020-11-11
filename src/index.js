@@ -8,16 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const comicbooksContainer = document.querySelector('#comicbooks-container')
     comicbooksContainer.addEventListener('click', e => deleteComicbook(e));
 
-    //const comicbooksContainer = document.querySelector('#comicbooks-container') //working
-    //comicbooksContainer.addEventListener('click', e => { //working
-    //console.log('clicked');
-    //  const id = parseInt(e.target.dataset.id); //
-    //debugger
-    //const comicbook = Comicbook.findById(id); //
-    //debugger
-    //console.log(comicbook); //
 });
-//working })
 
 function getComics() {
     fetch(endPoint)
@@ -32,29 +23,14 @@ function getComics() {
         })
 }
 
-//function render(comicbook) {
-//const comicbooksMarkup = `
-//<div data-id=${comicbook.id}>
-//<img src=${comicbook.attributes.image_url} height="300" width="200">
-//<h3>${comicbook.attributes.title}</h3>
-//<p> Writer: ${comicbook.attributes.writer}</p>
-//<p> Artist: ${comicbook.attributes.artist}</p>
-// <p> Publisher: ${comicbook.attributes.publisher.name}</p>
-//<button data-id=${comicbook.id}>edit</button>
-//</div>
-//<br><br>`;
-
-//document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
-//}
-
 function createFormHandler(e) {
     e.preventDefault()
     console.log(e)
-    const titleInput = document.querySelector('#input-title').value
-    const writerInput = document.querySelector('#input-writer').value
-    const artistInput = document.querySelector('#input-artist').value
-    const imageInput = document.querySelector('#input-url').value
-    const publisherInput = document.querySelector('#publisher').value
+    const titleInput = e.target.title.value // document.querySelector('#input-title').value // e.target.title.value
+    const writerInput = e.target.writer.value // document.querySelector('#input-writer').value
+    const artistInput = e.target.artist.value // document.querySelector('#input-artist').value
+    const imageInput = e.target.image.value // document.querySelector('#input-url').value
+    const publisherInput = e.target.publisher.value // document.querySelector('#publisher').value
     const publisherId = parseInt(publisherInput)
         //const publisherId = parseInt(document.querySelector('#publishers').value)// I can do it in single step
     postComicbook(titleInput, writerInput, artistInput, imageInput, publisherInput)
@@ -73,8 +49,8 @@ function postComicbook(title, writer, artist, image_url, publisher_id) {
             //debugger
             const comicbooksMarkup = `
             <div data-id=${comicbook.id}>
-            <h3>${comicbook.title}</h3>
             <img src=${comicbook.image_url} height="300" width="200">
+            <h3>${comicbook.title}</h3>
             <p> Writer: ${comicbook.writer}</p>
             <p> Artist: ${comicbook.artist}</p>
             <p> Publisher: ${comicbook.publisher_id}</p>
@@ -83,7 +59,6 @@ function postComicbook(title, writer, artist, image_url, publisher_id) {
              <br><br>`;
             document.querySelector('#comicbooks-container').innerHTML += comicbooksMarkup;
         })
-
 }
 
 function deleteComicbook(e) {
