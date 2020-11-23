@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comicbook Geek App</title>
+    <link rel="stylesheet" href="index.css">
     <!-- JS Connection Tags -->
 
     <script src="src/index.js" charset="utf-8"></script>
@@ -14,12 +15,11 @@
 </head>
 
 <body>
-    <h1>COMICBOOK GEEK APP</h1>
-
+    <h1 style='text-align:center ; color:#237ba3' ;>COMICBOOK GEEK APP</h1>
     <div class="form-container">
 
-        <form id="create-comicbook-form" style="">
-            <h2> Create a Comicbook </h2>
+        <form id="create-comicbook-form" style='text-align:center'>
+            <b><h2> Create a Comicbook </h2></b>
 
             <input id='input-title' type="text" name="title" value="" placeholder="Comicbook Title" class="input-text">
             <br><br>
@@ -28,7 +28,7 @@
             <input id='input-artist' type="text" name="artist" value="" placeholder="Comicbook Artist" class="input-text">
             <br><br>
             <input id='input-url' type="text" name="image" value="" placeholder="Comicbook Image URL" class="input-text">
-            <p>Publishers</p>
+            <b><p>Publishers</p></b>
             <select id="publisher" name="publisher">
             <option value="1">Marvel Comics</option>
             <option value="2">DC Comics</option>
@@ -41,8 +41,8 @@
         </form>
     </div>
     <br><br>
-    <h2>MY COMICBOOKS</h2>
-    <div id="comicbooks-container">
+    <h2 style='text-align:center'>MY COMICBOOKS</h2>
+    <div style='text-align:center' id="comicbooks-container">
 
     </div>
 

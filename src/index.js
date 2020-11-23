@@ -15,10 +15,10 @@ function getComics() {
         .then(response => response.json())
         .then(comics => {
             comics.data.forEach(comicbook => {
-                let newComicbook = new Comicbook(comicbook, comicbook.attributes) //this is where I am testing my class  
-                    //debugger
+                let newComicbook = new Comicbook(comicbook, comicbook.attributes)
+
                 document.querySelector('#comicbooks-container').innerHTML += newComicbook.renderComicbook()
-                    //render(comicbook)
+
             })
         })
 }

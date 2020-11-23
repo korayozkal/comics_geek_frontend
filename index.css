@@ -1,0 +1,40 @@
+button {
+    position: relative;
+    background-color: #237ba3;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+}
+
+button:hover {
+    background-color: whitesmoke;
+    border: #237ba3 solid 1px;
+    color: #237ba3;
+}
+
+.submit {
+    position: relative;
+    background-color: #237ba3;
+    border-radius: 5px;
+    height: 2rem;
+    width: max-content;
+    color: whitesmoke;
+    font-size: 18px;
+    justify-self: center;
+    font-family: monospace;
+    margin: 3px;
+}
+
+.submit:hover {
+    background-color: whitesmoke;
+    border: #237ba3 solid 1px;
+    color: #237ba3;
+}
+
+body {
+    background-color: rgb(245, 250, 249);
+}
